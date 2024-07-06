@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Header from './components/header';
+import DataFetcher from './components/dataFetcher';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="rectangular-rule"></div>
+      <main>
+        <DataFetcher  baseEndpoint="http://3.88.1.181:8000/products/public/catalog"
+          params={{ supplier: "FragranceX", first: 0,last:10,search:'Oxygene by Lanvin' }}   />
+      </main>
     </div>
   );
 }
